@@ -1,87 +1,105 @@
-// console.log("test")
-// callback
+//Static Object
 
-const data = [
-  {
-    user: "Rahul",
-    email: "rahul@test.com",
-    position: "software Developer",
-  },
-  {
-    user: "nathu",
-    email: "nathu@test.com",
-    position: "software Engineer",
-  },
-];
-
-// function getData(){
-//     setTimeout(()=>{
-//         let output=""
-//         data.map((item)=>{
-//             output +=`<li>${item.user} </li>`
-//         })
-//         document.body.innerHTML=output
-//     },1000)
+// const test ={
+//     name:"rahul",
+//     email:"rahul@test.com",
+//     contact:{
+//         home:9582792631,
+//         personal:7858954829,
+//         fax:2154457859
+//     },
+//     details(){
+//         console.log("No details found!!")
+//         }
 // }
 
-// const createData = (newData ,callback) =>{
-//     setTimeout(()=>{
-//         data.push(newData);
-//         callback()
-//     },2000)
+// test.details();
+// console.log(test.name)
+
+// for(key in test){
+//     console.log(key , test[key])
+// }
+
+// Factory Object
+
+// function learnObject() {
+//   const test = {
+//     name: "rahul",
+//     email: "rahul@test.com",
+//     contact: {
+//       home: 9582792631,
+//       personal: 7858954829,
+//       fax: 2154457859,
+//     },
+//     details() {
+//       console.log("No details found!!");
+//     },
+
+//   };
+//   return test;
 
 // }
 
-// createData({user:"vivek" , email:"vivek@test.com" , position:"software Developer"} , getData);
-// getData()
-// console.log(data)
+// const printTest = learnObject();
+// printTest.details();
 
-// Promises
-const printemail = () => {
-  setTimeout(() => {
-    let printoutput = "";
-    data.map((list) => {
-      printoutput += `<li>${list.email} </li>`;
-    });
-    document.body.innerHTML = printoutput;
-  }, 1000);
-};
+// // console.log(printTest.contact);
 
-const createData = (newData) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      data.push(newData);
-      let error = false;
-      if (!error) {
-        resolve();
-      } else {
-        reject("something wents wrong");
-      }
-    }, 2000);
-  });
-};
+// for(key in printTest){
+//         console.log(key , printTest[key])
+//     }
+
+// Improved Factory Function
+
+// function learnObject () {
+//     return{
+//         name: "rahul",
+//         email: "rahul@test.com",
+//         contact: {
+//           home: 9582792631,
+//           personal: 7858954829,
+//           fax: 2154457859,
+//         },
+//         details() {
+//           console.log("No details found!!");
+//         },
+
+//       };
+// }
+
+// const printTest = learnObject();
+// printTest.details();
+
+// constructor method
+
+// function learnobject() {
+//   (this.name = "rahul"),
+//     (this.email = "rahul@test.com"),
+//     (this.contact = {
+//       home: 9582792631,
+//       personal: 7858954829,
+//       fax: 2154457859,
+//     }),
+//     (this.details = function () {
+//       console.log("No details found!!");
+//     });
+// }
+
+// const learnObject = new learnobject();
+
+// learnObject.details();
 
 
-// createData({
-//   user: "vivek",
-//   email: "vivek@test.com",
-//   position: "software Developer",
-// })
-//   .then(printemail)
-//   .catch((err) => {
-//     console.log(err);
-//   });
+// console.log(learnObject)
+// console.log(learnObject.contact)
+
+// delete learnObject.contact;
+
+// console.log(learnObject)
 
 
-async function start(){
-    await createData({
-          user: "vivek",
-          email: "vivek@test.com",
-          position: "software Developer",
-        })
-        printemail();
+const student = {
+  name : "nathu",
+  
 }
-
-start();
-//   Async Await
 
